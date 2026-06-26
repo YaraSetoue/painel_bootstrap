@@ -69,6 +69,11 @@ main{
   background-color: var(--bs-tertiary-bg);
 }
 
+#list-tab-aba .list-group-item .list-group-item-action:hover,
+#list-tab-aba .list-group-item .list-group-item-action.active{
+  color: var(--bs-list-group-active-color);
+}
+
 #list-tab-aba .list-group-item:hover .btn-close,
 #list-tab-aba .list-group-item .list-group-item-action.active + .btn-close {
     opacity: 1;

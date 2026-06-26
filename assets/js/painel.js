@@ -45,32 +45,30 @@ $(document).ready(() => {
 
         let nameAba = $linkItem.text();
         let idAba = nameAba.trim().toLowerCase().replace(/\s+/g, '');
+        
+        if($(`#list-${idAba}-item`).length == 0){
+
+            $containerList.append(`
+                <div class="list-group-item">
+                    <a class="list-group-item-action" data-bs-toggle="list" href="#list-${idAba}-pane" id="list-${idAba}-item" role="tab" aria-controls="list-${idAba}-pane">
+                        ${nameAba}
+                    </a>
+    
+                    <button type="button" class="btn-close"></button>
+                </div>
+            `);
+    
+            $containerPane.append(`
+                <div class="tab-pane" id="list-${idAba}-pane" role="tabpanel">${nameAba}</div>
+            `);
             
-        let active = false;
-
-        if($containerList.find('.list-group-item').length == 0){
-            active = true
+            $linkItem.attr('href', `#list-${idAba}-item`);
         }
 
-        $containerList.append(`
-            <div class="list-group-item">
-                <a class="list-group-item-action" data-bs-toggle="list" href="#list-${idAba}-pane" id="list-${idAba}-item" role="tab" aria-controls="list-${idAba}-pane">
-                    ${nameAba}
-                </a>
-
-                <button type="button" class="btn-close"></button>
-            </div>
-        `);
-
-        $containerPane.append(`
-            <div class="tab-pane" id="list-${idAba}-pane" role="tabpanel">${nameAba}</div>
-        `);
-
-        if(active){
-            $(`#list-${idAba}-item`).addClass('active');
-            $(`#list-${idAba}-pane`).addClass('active');
-        }
-
+        $containerList.find('.list-group-item-action.active').removeClass('active');
+        $($linkItem.attr('href')).toggleClass('active');
+        $('#list-pane-aba .tab-pane.active').removeClass('active');
+        $($($linkItem.attr('href')).attr('href')).toggleClass('active');
     })
 
 
