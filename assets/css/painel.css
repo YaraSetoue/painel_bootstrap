@@ -83,6 +83,14 @@ main{
   --bs-list-group-active-bg: var(--bs-tertiary-bg);
 }
 
+#list-pane-aba{
+  height: 100%;
+}
+
+#list-pane-aba .tab-pane:has(.js_loading){
+  height: 100%;
+}
+
 .dropdown-toggle { outline: 0; }
 
 .btn-toggle {
