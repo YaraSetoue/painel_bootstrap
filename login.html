@@ -10,7 +10,7 @@
     <title>Login</title>
 </head>
 
-<body class="d-flex align-items-center py-4 bg-body-tertiary">
+<body class="d-flex align-items-center py-4">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
             <path
@@ -35,25 +35,28 @@
         </symbol>
     </svg>
     <main class="form-signin w-100 m-auto">
-        <form action="W:\Projetos\Pessoais\painel_interface\painel.html" class="needs-validation">
-            <h1 class="h3 mb-3 fw-normal">Fazer login</h1>
+        <form action="W:\Projetos\Pessoais\painel_interface\painel.html" class="needs-validation border shadow px-3 py-4 rounded bg-body-tertiary">
+            <h1 class="h3 mb-3 fw-normal">Acessar o painel</h1>
             <div class="form-group mb-3">
                 <label for="loginInputEmail" class="form-label">Endereço de Email</label>
-                <input type="email" class="form-control" id="loginInputEmail" placeholder="name@exemplo.com" required>
+                <input type="email" class="form-control" id="loginInputEmail" placeholder="name@exemplo.com" required value="teste@email.com">
                 <div class="invalid-feedback">
                     Por favor, digite um email.
                 </div>
             </div>
             <div class="form-group mb-3"> 
                 <label for="loginInputSenha" class="form-label">Senha</label>
-                <input type="password" id="loginInputSenha" class="form-control" aria-describedby="blocoDicaSenha">
+                <input type="password" id="loginInputSenha" class="form-control" aria-describedby="blocoDicaSenha" required value="teste">
                 <div id="blocoDicaSenha" class="form-text">
-                    Sua senha deve ter entre 8 e 20 caracteres.
+                    Sua senha deve ter no mínimo 8 e no máximo 20 caracteres.
                 </div>
             </div>
             <button class="btn btn-primary w-100 py-2" type="submit">Entrar</button>
         </form>
     </main>
+    <footer class="position-absolute bottom-0 end-0 opacity-50 px-2 bg-dark-subtle rounded-top">
+        <small><strong>Painel</strong> v1.0.0</small>
+    </footer>
     <script src="assets/frameworks/jquery/jquery-4.0.0.min.js"></script>
     <script src="assets/frameworks/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/form.js"></script>
